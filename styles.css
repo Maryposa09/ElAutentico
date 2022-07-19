@@ -1,0 +1,396 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Nunito", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 100px;
+}
+
+body {
+  width: 100%;
+  color: white;
+}
+
+:root {
+  --yellow: #ffc200;
+  --black: #131415;
+  --grey: #2d3640;
+}
+
+.section-container {
+  background-color: var(--black);
+}
+
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 0px;
+  width: 95%;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+button {
+  background-color: var(--yellow);
+  border: 0px solid black;
+  outline: none;
+  width: 180px;
+  height: 40px;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.4s ease-out;
+}
+
+button:hover {
+  background-color: #c79900;
+  transition: all 0.4s ease-in;
+}
+
+/*Header*/
+
+.header-container {
+  position: sticky;
+  top: 0%;
+  z-index: 9999;
+}
+
+.header {
+  margin: 0 auto;
+  max-width: 1300px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 80px 0px 50px;
+}
+
+.logo-container {
+  height: 46%;
+  display: flex;
+  align-items: stretch;
+}
+
+.navbar,
+.navbar-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-list {
+  gap: 50px;
+}
+
+.navbar i {
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+#toggle-menu {
+  display: none;
+}
+
+.navbar a {
+  color: white;
+  font-size: 22px;
+}
+
+.navbar-list li:last-child > a {
+  border: 1px solid white;
+  font-size: 14px;
+  padding: 8px 40px;
+  border-radius: 3px;
+  transition: all 0.3s linear;
+}
+
+.navbar-list li:last-child > a:hover {
+  background-color: white;
+  color: var(--grey);
+  transition: all 0.3s linear;
+  font-weight: 700;
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding: 0px 50px 0px 10px;
+  }
+  .navbar i {
+    display: flex;
+  }
+
+  .navbar-list {
+    position: absolute;
+    background-color: var(--black);
+    flex-direction: column;
+    top: 100px;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - 100px);
+    z-index: 9999;
+    display: none;
+  }
+
+  #toggle-menu:checked + .navbar-list {
+    display: flex;
+  }
+}
+
+/*Hero*/
+
+#hero {
+  background-image: url(./img/vegetales-puestos-izquierda-pizarra-negra.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 45vh;
+
+}
+
+.description-container {
+  display: flex;
+  justify-content: flex-start;
+  flex: 1 1 80%;
+  padding-left: 10px;
+}
+.description-container h1 {
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 45px;
+}
+
+.description-container p {
+  font-size: 15px;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .hero-img {
+    display: none;
+  }
+  .description-container {
+    justify-content: center;
+    align-items: center;
+  }
+  .text-container,
+  .button-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+#about-us {
+  gap: 15%;
+  flex-wrap: wrap;
+}
+
+.about-img {
+  background-image: url(./img/nosotros_cocina.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 250px;
+  max-width: 300px;
+  flex: 1 1 300px;
+  border-radius: 5px;
+}
+
+.about-content {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  flex: 1 1 50%;
+  gap: 20px;
+}
+
+.section-title {
+  font-weight: 700;
+  font-size: 32px;
+  flex-direction: column;
+}
+
+.section-p {
+  font-size: 15px ;
+  font-weight: 400;
+}
+
+#productos {
+  flex-direction: column;
+  gap: max(120px, 10%);
+}
+
+.product-cards-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 75%;
+  gap: 60px;
+}
+
+.product-card {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  background-color: var(--grey);
+  text-align: center;
+  
+  height: 30vh;
+  width: 35vmin;
+ padding: 10px;
+}
+
+.product-cards-img {
+  
+  width:30vmin;
+  height: 35vh;
+  border-radius: 5%;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  font-weight: 300;
+  color: var(--grey);
+  background-size: cover;
+}
+
+.product-card:first-child .product-cards-img {
+  background-image: url(./img/product_1.webp);
+}
+
+.product-card:nth-child(2) .product-cards-img {
+  background-image: url(./img/product_2.webp);
+}
+.product-card:nth-child(3) .product-cards-img {
+  background-image: url(./img/product_3.webp);
+}
+
+.product-card:nth-child(4) .product-cards-img {
+  background-image: url(./img/product_4.webp);
+}
+
+.product-card:nth-child(5) .product-cards-img {
+  background-image: url(./img/product_5.webp);
+}
+
+.product-card:nth-child(6) .product-cards-img {
+  background-image: url(./img/product_6.webp);
+}
+ /* contact */
+
+ #contact.section{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+ } 
+
+ form {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70vw;
+  padding: 15px;
+  overflow: hidden;
+ }
+
+ label{
+  padding: 10px;
+}
+
+input{
+  width: 65vw;
+  padding: 5px;
+}
+
+textarea{
+  width: 65vw;
+  padding: 15px;
+}
+
+/* line */
+
+.divider {
+  width: min(90%, 600px);
+  margin-top: 80px;
+  height: 3px;
+  background-color: var(--yellow);
+}
+
+/* footer */
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  max-width: 1300px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 70px;
+  padding: 30px;
+}
+
+.footer-msg {
+  text-align: justify;
+  font-weight: 700;
+  font-size: 24px;
+  max-width: 450px;
+}
+
+.footer-info {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 14px;
+  min-height: 100px;
+}
+
+.footer-social i:last-child {
+  margin-left: 10px;
+}
+
+.footer-terms {
+  display: flex;
+  gap: 25px;
+}
+
+.footer-terms a {
+  color: white;
+  font-weight: 300;
+}
+
+@media (max-width: 945px) {
+  .footer {
+    gap: 40px;
+  }
+  .footer-msg {
+    max-width: 600px;
+    text-align: center;
+  }
+  .footer-info {
+    align-items: center;
+    gap: 20px;
+  }
+  .footer-terms {
+    justify-content: center;
+    text-align: center;
+  }
+}
